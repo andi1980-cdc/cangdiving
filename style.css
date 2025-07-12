@@ -150,6 +150,26 @@ a[href^="/"] {
   display: block !important;
 }
 
+/* Override inline styles for hero images - critical for CLS prevention */
+.hero picture img[style*="width: 100%"] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Ensure hero picture containers maintain aspect ratio */
+.hero picture[style*="aspect-ratio"] {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
 /* Hero picture containers - maintain aspect ratio to prevent layout shifts */
 .hero picture[style*="aspect-ratio"] {
   display: block;
@@ -1378,6 +1398,16 @@ button:focus,
     position: static !important;
     width: 100% !important;
     height: auto !important;
+    aspect-ratio: 3/2 !important;
+    display: block !important;
+  }
+  
+  /* Override inline styles on mobile - critical for CLS prevention */
+  .hero picture img[style*="width: 100%"] {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
     aspect-ratio: 3/2 !important;
     display: block !important;
   }
