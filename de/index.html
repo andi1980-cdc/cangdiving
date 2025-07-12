@@ -1243,16 +1243,11 @@
         
         <!-- TrustIndex Widget -->
         <div class="trustindex-widget" style="margin-top: 2rem;">
-          <script>
-            // Simple delayed loading - more reliable than Intersection Observer
-            setTimeout(() => {
-              const script = document.createElement('script');
-              script.defer = true;
-              script.async = true;
-              script.src = 'https://cdn.trustindex.io/loader.js?10987fa47f9a902e6d96b4a1e44';
-              document.head.appendChild(script);
-            }, 2000); // Load after 2 seconds
-          </script>
+          <script
+            defer
+            async
+            src="https://cdn.trustindex.io/loader.js?10987fa47f9a902e6d96b4a1e44"
+          ></script>
         </div>
       </section>
     </main>
