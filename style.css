@@ -138,18 +138,8 @@ a[href^="/"] {
   padding: 0;
 }
 
-/* Hero header image - responsive by default to prevent CLS */
+/* Hero header image specific styles - prevent CLS */
 .hero-header-img {
-  position: static !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  aspect-ratio: 3/2 !important;
-  display: block !important;
-}
-
-/* Hero header image on homepage - absolute positioning for 75vh hero */
-section.hero .hero-header-img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -157,7 +147,20 @@ section.hero .hero-header-img {
   height: 100% !important;
   object-fit: cover !important;
   z-index: 1 !important;
-  aspect-ratio: unset !important;
+  display: block !important;
+}
+
+/* Hero picture containers - maintain aspect ratio to prevent layout shifts */
+.hero picture[style*="aspect-ratio"] {
+  display: block;
+  width: 100%;
+}
+
+.hero picture[style*="aspect-ratio"] .hero-header-img {
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
 }
 
 /* Picture element for hero images - maintain aspect ratio */
