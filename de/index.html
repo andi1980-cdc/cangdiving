@@ -16,7 +16,7 @@
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
     <meta name="author" content="Chang Diving Center" />
-    <meta name="language" content="en" />
+    <meta name="language" content="de" />
     <meta name="theme-color" content="#0077b6" />
     <meta name="msapplication-TileColor" content="#0077b6" />
     <meta name="generator" content="Chang Diving Center Website" />
@@ -64,7 +64,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://changdiving.com/de/" />
-    <meta property="og:image" content="/img/pages/mobile header.webp" />
+    <meta property="og:image" content="/img/pages/mobile_header.webp" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -76,7 +76,7 @@
       name="twitter:description"
       content="Starte dein Tauchabenteuer mit Chang Diving auf Koh Chang – Kurse &amp; Fun Dives, kleine Gruppen, erfahrene Profis. Jetzt online buchen!"
     />
-    <meta name="twitter:image" content="/img/pages/mobile header.webp" />
+    <meta name="twitter:image" content="/img/pages/mobile_header.webp" />
 
     <!-- Favicon -->
     <!-- Favicon and Icons -->
@@ -126,9 +126,41 @@
       type="image/x-icon"
     />
 
+    <!-- Local Font Preloads -->
+    <link
+      rel="preload"
+      href="/fonts/roboto-v48-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/roboto-v48-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Critical CSS and Font Loading -->
+    <link
+      rel="stylesheet"
+      href="/fonts/fonts.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="/style.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/fonts/fonts.css" />
+      <link rel="stylesheet" href="/style.css" />
+    </noscript>
+
     <!-- Preconnect for External Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.trustindex.io" />
 
     <!-- Performance Optimizations -->
@@ -935,20 +967,7 @@
       ]
     </script>
 
-    <!-- Google Fonts: Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="/style.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="/style.css" />    <!-- Critical Image Preload -->
+          <!-- Critical Image Preload -->
     <link
       rel="preload"
       as="image"
@@ -956,8 +975,6 @@
       imagesrcset="/img/pages/mobile_header.webp 600w, /img/pages/mobile_header.webp 1200w"
       imagesizes="100vw"
     />
-
-</noscript>
 
     </head>
   <body>
