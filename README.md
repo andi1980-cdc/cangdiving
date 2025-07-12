@@ -69,4 +69,4 @@ Koh Chang, Trat Province, Thailand
 
 ---
 
-*Experience the underwater world of Koh Chang with Chang Diving!* 
+*Experience the underwater world of Koh Chang with Chang Diving!*
