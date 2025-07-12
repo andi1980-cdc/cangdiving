@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   src: url("/fonts/roboto-v48-latin-regular.woff2") format("woff2");
-  font-display: optional;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   src: url("/fonts/roboto-v48-latin-700.woff2") format("woff2");
-  font-display: optional;
+  font-display: swap;
 }
 
 /* =====================

@@ -1,8 +1,16 @@
-/* 
- * This file exists to prevent browser errors when /fonts/fonts.css is requested.
- * The actual font definitions are now integrated in /style.css for better performance.
- * 
- * Font files in this directory:
- * - roboto-v48-latin-regular.woff2
- * - roboto-v48-latin-700.woff2
- */
+/* Roboto Font Definitions - Prevent FOUT/FOIT and Layout Shifts */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/roboto-v48-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/roboto-v48-latin-700.woff2") format("woff2");
+  font-display: swap;
+}
