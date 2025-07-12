@@ -1240,59 +1240,19 @@
           – discover why Chang Diving is trusted since 2005. ⭐⭐⭐⭐⭐
         </p>
         
-        <!-- TrustIndex Lazy Loading Container -->
-        <div 
-          id="trustindex-container" 
-          style="
-            min-height: 350px; 
-            overflow: hidden;
-            position: relative;
-            background: #f9f9f9;
-            border-radius: 8px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #666;
-          "
-        >
-          <div style="text-align: center;">
-            <div style="margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-            <div>Loading reviews...</div>
-          </div>
+        <!-- TrustIndex Delayed Loading -->
+        <div style="min-height: 200px; overflow: hidden;">
+          <script>
+            // Simple delayed loading - more reliable than Intersection Observer
+            setTimeout(() => {
+              const script = document.createElement('script');
+              script.defer = true;
+              script.async = true;
+              script.src = 'https://cdn.trustindex.io/loader.js?10987fa47f9a902e6d96b4a1e44';
+              document.head.appendChild(script);
+            }, 2000); // Load after 2 seconds
+          </script>
         </div>
-
-        <!-- TrustIndex Lazy Loading Script -->
-        <script>
-          // Lazy load TrustIndex when container comes into view
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                // Load TrustIndex script
-                const script = document.createElement('script');
-                script.defer = true;
-                script.async = true;
-                script.src = 'https://cdn.trustindex.io/loader.js?10987fa47f9a902e6d96b4a1e44';
-                document.head.appendChild(script);
-                
-                // Clean up loading indicator
-                const container = document.getElementById('trustindex-container');
-                container.innerHTML = '';
-                container.style.background = 'transparent';
-                container.style.minHeight = 'auto';
-                
-                // Stop observing
-                observer.unobserve(entry.target);
-              }
-            });
-          }, {
-            rootMargin: '100px' // Load 100px before the element becomes visible
-          });
-          
-          // Start observing the container
-          observer.observe(document.getElementById('trustindex-container'));
-        </script>
       </section>
     </main>
 
