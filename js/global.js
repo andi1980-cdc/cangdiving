@@ -511,3 +511,25 @@ window.testClick = function() {
     console.error('[YouTube Test] ❌ No element to click');
   }
 };
+
+// Performance Optimization: Add lazy loading to all tile images
+// ---------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  // Add loading="lazy" to all images in .three.columns containers (tiles)
+  const tileImages = document.querySelectorAll('.three.columns img');
+  tileImages.forEach(function(img) {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+
+  // Add loading="lazy" to all images in .row containers that don't have it
+  const rowImages = document.querySelectorAll('.row img');
+  rowImages.forEach(function(img) {
+    if (!img.hasAttribute('loading') && !img.closest('.hero')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+
+  console.log('[PERF] Lazy loading added to', tileImages.length, 'tile images and', rowImages.length, 'row images');
+});
