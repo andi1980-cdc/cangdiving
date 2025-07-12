@@ -178,8 +178,8 @@ a[href^="/"] {
   z-index: 2;
   width: 100%;
   padding: 0 20px;
-  /* Mobile-first: Hidden by default to prevent CLS */
-  display: none;
+  /* Always visible - no layout shift */
+  display: block;
 }
 .hero-text h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -1328,10 +1328,21 @@ button:focus,
   }
 }
 
-/* Desktop: Show hero text only on larger screens */
-@media (min-width: 768px) {
-  .hero-text {
-    display: block;
+/* Hero H1 responsive visibility - no layout shift solution */
+.hero-text h1 {
+  visibility: visible;
+  height: auto;
+  margin: 0 0 20px 0;
+}
+
+/* Mobile: Hide hero H1 but keep in DOM to prevent layout shift */
+@media (max-width: 767px) {
+  .hero-text h1 {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 }
 
