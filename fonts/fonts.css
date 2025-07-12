@@ -1,0 +1,8 @@
+/* 
+ * This file exists to prevent browser errors when /fonts/fonts.css is requested.
+ * The actual font definitions are now integrated in /style.css for better performance.
+ * 
+ * Font files in this directory:
+ * - roboto-v48-latin-regular.woff2
+ * - roboto-v48-latin-700.woff2
+ */
