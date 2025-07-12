@@ -1335,9 +1335,10 @@ button:focus,
   margin: 0 0 20px 0;
 }
 
-/* Mobile: Hide hero H1 but keep in DOM to prevent layout shift */
+/* Mobile: Hide hero H1 and P but keep in DOM to prevent layout shift */
 @media (max-width: 767px) {
-  .hero-text h1 {
+  .hero-text h1,
+  .hero-text p {
     visibility: hidden;
     height: 0;
     margin: 0;
