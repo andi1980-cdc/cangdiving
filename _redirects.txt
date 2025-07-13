@@ -142,10 +142,4 @@
 /th/why-advanced/ /th/posts/ 301
 /en/wreck-diving-koh-chang/ /en/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
 /de/wreck-diving-koh-chang/ /de/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
-/th/wreck-diving-koh-chang/ /th/posts/scuba-knowledge/wreck-diving-koh-chang/ 301 
-
-# 404 Error Pages - Must be last (catch-all)
-/en/* /en/404/ 404
-/de/* /de/404/ 404  
-/th/* /th/404/ 404
-/* /en/404/ 404
+/th/wreck-diving-koh-chang/ /th/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
