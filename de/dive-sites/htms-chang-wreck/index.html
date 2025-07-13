@@ -340,12 +340,21 @@
         <div style="margin: 30px auto; max-width: 800px; text-align: center">
           <img
             src="/img/dive-sites/wal-shark-htms-chang.webp"
+            srcset="
+              /img/dive-sites/300x300/wal-shark-htms-chang.webp 300w,
+              /img/dive-sites/wal-shark-htms-chang.webp         600w
+            "
+            sizes="(max-width: 400px) 300px, 600px"
             alt="Walhai schwimmt über das HTMS Chang Wrack in Thailand am 8. Januar 2025"
+            width="600"
+            height="400"
+            fetchpriority="high"
+            loading="lazy"
             style="
-              width: 100%;
-              height: auto;
               border-radius: 8px;
               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+              margin: 0 auto;
+              display: block;
             "
           />
           <p style="font-size: 0.95em; color: #444; margin-top: 8px">
