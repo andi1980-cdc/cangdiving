@@ -1,18 +1,21 @@
 User-agent: *
 Allow: /
 
-# Block admin and system files
-Disallow: /docs/
+# Block only technical files that shouldn't be indexed
 Disallow: /js/
-Disallow: /img/
 Disallow: /fonts/
 Disallow: /*.css$
 Disallow: /*.js$
 
-# Allow important directories
+# Allow important content (explicitly stated for clarity)
+Allow: /img/
+Allow: /docs/
 Allow: /en/
 Allow: /de/
 Allow: /th/
 
 # Sitemap
-Sitemap: https://changdiving.com/sitemap.xml 
+Sitemap: https://changdiving.com/sitemap.xml
+
+# Crawl-delay to be respectful to servers
+Crawl-delay: 1 

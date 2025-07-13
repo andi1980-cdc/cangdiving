@@ -1,0 +1,47 @@
+DirectoryPath: "."
+FileExtension: ".html"
+
+# Basic checks
+CheckExternal: false  # Start without external links
+CheckInternal: true
+CheckInternalHash: false  # Skip hash checking for now
+CheckImages: true
+CheckScripts: true
+CheckAnchors: true
+CheckLinks: true
+CheckMeta: false  # Skip meta checks
+
+# Performance
+HTTPConcurrencyLimit: 4
+CacheExpires: "24h"
+
+# Ignore known missing files
+IgnoreInternalURLs:
+  - "/css/cookieconsent.min.css"
+  - "/js/cookieconsent.min.js"
+  - "/img/icons/favicon/site.webmanifest"
+  # Ignore missing pages that might be planned
+  - "/de/marine-life/"
+  - "/de/sustainable-diving/"
+  - "/de/how-to-advanced-course/"
+  - "/de/diving-activities/"
+  - "/de/open-water-duration/"
+  - "/de/padi-vs-sdi-tdi/"
+
+# Ignore directories that might have issues
+IgnoreDirs:
+  - "tmp"
+  - ".git"
+  - "node_modules"
+  - ".github"
+
+# Image settings
+IgnoreAltMissing: true  # Skip alt attribute checking for now
+IgnoreAltEmpty: true
+
+# Logging
+LogLevel: 2  # warnings only
+LogSort: "document"
+
+# Output
+OutputDir: "tmp/.htmltest" 
