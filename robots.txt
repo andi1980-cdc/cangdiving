@@ -1,2 +1,18 @@
 User-agent: *
-Disallow: / 
+Allow: /
+
+# Block admin and system files
+Disallow: /docs/
+Disallow: /js/
+Disallow: /img/
+Disallow: /fonts/
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Allow important directories
+Allow: /en/
+Allow: /de/
+Allow: /th/
+
+# Sitemap
+Sitemap: https://changdiving.com/sitemap.xml 
