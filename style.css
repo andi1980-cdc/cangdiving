@@ -161,13 +161,11 @@ a[href^="/"] {
 }
 
 /* Ensure hero picture containers maintain aspect ratio */
-.hero picture[style*="aspect-ratio"] {
+.hero picture {
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  position: relative !important;
 }
 
 /* Hero picture containers - maintain aspect ratio to prevent layout shifts */
@@ -1383,7 +1381,7 @@ button:focus,
 @media (max-width: 767px) {
   /* .hero-text already hidden by default - no CLS! */
   .hero-header-img {
-    position: static !important;
+    position: relative !important;
     width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
@@ -1395,16 +1393,16 @@ button:focus,
     min-height: unset !important;
   }
   .hero picture {
-    position: static !important;
+    position: relative !important;
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 3/2 !important;
     display: block !important;
   }
   
-  /* Override inline styles on mobile - critical for CLS prevention */
-  .hero picture img[style*="width: 100%"] {
-    position: static !important;
+  /* Hero images on mobile - critical for CLS prevention */
+  .hero picture img {
+    position: relative !important;
     width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
