@@ -51,7 +51,7 @@
 /de/gas-consumption/ /de/posts/scuba-knowledge/gas-consumption/ 301
 /th/gas-consumption/ /th/posts/scuba-knowledge/gas-consumption/ 301
 /en/how-to-advanced-course/ /en/posts/diving-how-to-guides-koh-chang/how-to-advanced-course/ 301
-/de/how-to-advanced-course/ /de/posts/diving-how-to-guides-koh-chang/how-to-advanced-course/ 301
+
 /th/how-to-advanced-course/ /th/posts/diving-how-to-guides-koh-chang/how-to-advanced-course/ 301
 /en/how-to-fun-dives/ /en/posts/diving-how-to-guides-koh-chang/how-to-fun-dives/ 301
 /de/how-to-fun-dives/ /de/posts/diving-how-to-guides-koh-chang/how-to-fun-dives/ 301
@@ -111,13 +111,13 @@
 /de/open-water-duration/ /de/posts/tips-and-tricks/open-water-duration/ 301
 /th/open-water-duration/ /th/posts/tips-and-tricks/open-water-duration/ 301
 /en/padi-vs-sdi-tdi/ /en/posts/straight-talk/padi-vs-sdi-tdi/ 301
-/de/padi-vs-sdi-tdi/ /de/posts/straight-talk/padi-vs-sdi-tdi/ 301
+
 /th/padi-vs-sdi-tdi/ /th/posts/straight-talk/padi-vs-sdi-tdi/ 301
 /en/reel-guideline/ /en/posts/tips-and-tricks/reel-guideline/ 301
 /de/reel-guideline/ /de/posts/tips-and-tricks/reel-guideline/ 301
 /th/reel-guideline/ /th/posts/tips-and-tricks/reel-guideline/ 301
 /en/safety-check/ /en/posts/scuba-knowledge/safety-check/ 301
-/de/safety-check/ /de/posts/scuba-knowledge/safety-check/ 301
+
 /th/safety-check/ /th/posts/scuba-knowledge/safety-check/ 301
 /en/service-technician/ /en/posts/ 301
 /de/service-technician/ /de/posts/ 301
@@ -126,7 +126,7 @@
 /de/smb-guide/ /de/posts/scuba-knowledge/smb-guide/ 301
 /th/smb-guide/ /th/posts/scuba-knowledge/smb-guide/ 301
 /en/sustainable-diving/ /en/posts/straight-talk/sustainable-diving/ 301
-/de/sustainable-diving/ /de/posts/straight-talk/sustainable-diving/ 301
+
 /th/sustainable-diving/ /th/posts/straight-talk/sustainable-diving/ 301
 /en/thailand-diving-comparison/ /en/posts/koh-chang-diving-travel-guides/thailand-diving-comparison/ 301
 /de/thailand-diving-comparison/ /de/posts/koh-chang-diving-travel-guides/thailand-diving-comparison/ 301
@@ -141,5 +141,5 @@
 /de/why-advanced/ /de/posts/ 301
 /th/why-advanced/ /th/posts/ 301
 /en/wreck-diving-koh-chang/ /en/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
-/de/wreck-diving-koh-chang/ /de/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
+
 /th/wreck-diving-koh-chang/ /th/posts/scuba-knowledge/wreck-diving-koh-chang/ 301
