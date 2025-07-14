@@ -451,9 +451,7 @@ a[href^="/"] {
    Footer
    ===================== */
 .footer-navigation {
-  background: var(--footer-bg) url("/img/footer-bg.webp") no-repeat center
-    center;
-  background-size: cover;
+  background: var(--footer-bg);
   color: white;
   padding: 40px 0;
   font-size: 0.95rem;
