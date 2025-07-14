@@ -2117,3 +2117,108 @@ button:focus,
 .youtube-lite-embed.lyt-activated::before {
   display: none;
 }
+
+/* =====================
+   Thai Language Fixes
+   ===================== */
+
+/* Fix for Thai tone marks being clipped - increase line-height and add padding */
+html[lang="th"] .grid-container h1,
+html[lang="th"] .hero-text h1,
+:lang(th) h1 {
+  line-height: 1.45 !important;
+  padding-top: 0.15em;
+  padding-bottom: 0.1em;
+}
+
+html[lang="th"] .grid-container h2,
+html[lang="th"] .hero-text h2,
+:lang(th) h2 {
+  line-height: 1.4 !important;
+  padding-top: 0.12em;
+  padding-bottom: 0.08em;
+}
+
+html[lang="th"] .grid-container h3,
+html[lang="th"] .hero-text h3,
+:lang(th) h3 {
+  line-height: 1.35 !important;
+  padding-top: 0.1em;
+  padding-bottom: 0.06em;
+}
+
+/* Fix for Thai text in changdiving-box */
+html[lang="th"] .changdiving-box h1,
+html[lang="th"] .changdiving-box h2,
+html[lang="th"] .changdiving-box h3 {
+  line-height: 1.4 !important;
+  padding-top: 0.12em;
+  padding-bottom: 0.08em;
+}
+
+/* Fix for Thai text in three.columns excerpts */
+html[lang="th"] .three.columns .excerpt h2,
+html[lang="th"] .three.columns .excerpt h3 {
+  line-height: 1.4 !important;
+  padding-top: 0.1em;
+  padding-bottom: 0.06em;
+}
+
+/* Fix for Thai text in video gallery */
+html[lang="th"] .video-gallery h1,
+html[lang="th"] .video-gallery h2 {
+  line-height: 1.4 !important;
+  padding-top: 0.12em;
+  padding-bottom: 0.08em;
+}
+
+/* Fix for Thai text in FAQ elements */
+html[lang="th"] .faq-list dt {
+  line-height: 1.4 !important;
+  padding-top: 0.1em;
+  padding-bottom: 0.06em;
+}
+
+/* Fix for Thai text in contact CTA */
+html[lang="th"] .contact-cta h2 {
+  line-height: 1.4 !important;
+  padding-top: 0.12em;
+  padding-bottom: 0.08em;
+}
+
+/* Mobile responsive fixes for Thai */
+@media (max-width: 700px) {
+  html[lang="th"] .grid-container h1,
+  html[lang="th"] .hero-text h1,
+  :lang(th) h1 {
+    line-height: 1.5 !important;
+    padding-top: 0.18em;
+    padding-bottom: 0.12em;
+  }
+
+  html[lang="th"] .grid-container h2,
+  html[lang="th"] .hero-text h2,
+  :lang(th) h2 {
+    line-height: 1.45 !important;
+    padding-top: 0.15em;
+    padding-bottom: 0.1em;
+  }
+
+  html[lang="th"] .grid-container h3,
+  html[lang="th"] .hero-text h3,
+  :lang(th) h3 {
+    line-height: 1.4 !important;
+    padding-top: 0.12em;
+    padding-bottom: 0.08em;
+  }
+}
+
+/* Fix for Thai text overflow in smaller containers */
+@media (max-width: 480px) {
+  html[lang="th"] .grid-container h1,
+  html[lang="th"] .hero-text h1 {
+    line-height: 1.55 !important;
+    padding-top: 0.2em;
+    padding-bottom: 0.15em;
+  }
+}
