@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>Chang Diving - Posts</title>
+    <meta
+      name="description"
+      content="Chang Diving Center – Diving Posts, Guides & Articles. Choose your language: English, Deutsch, ไทย."
+    />
+    <link rel="alternate" hreflang="en" href="/en/posts/" />
+    <link rel="alternate" hreflang="de" href="/de/posts/" />
+    <link rel="alternate" hreflang="th" href="/th/posts/" />
+    <link rel="alternate" hreflang="x-default" href="/post/" />
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: #f7fafd;
+        color: #222;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .lang-select {
+        margin: 10vh auto 0 auto;
+        max-width: 400px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(33, 150, 243, 0.1);
+        padding: 32px 24px;
+      }
+      .lang-select h1 {
+        font-size: 2rem;
+        margin-bottom: 1.2em;
+        color: #0077b6;
+      }
+      .lang-btns {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-bottom: 1.5em;
+      }
+      .lang-btns a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.1em;
+        color: #0077b6;
+        font-weight: bold;
+        background: #e3f2fd;
+        border-radius: 8px;
+        padding: 18px 18px 10px 18px;
+        transition: background 0.2s;
+        border: none;
+      }
+      .lang-btns a:hover {
+        background: #b3e5fc;
+      }
+      .note {
+        font-size: 0.98em;
+        color: #666;
+        margin-top: 1.5em;
+      }
+    </style>
+    <script>
+      // Auto-Redirect nach Browsersprache
+      document.addEventListener("DOMContentLoaded", function () {
+        var lang = (
+          navigator.language ||
+          navigator.userLanguage ||
+          "en"
+        ).toLowerCase();
+        if (window.location.search.indexOf("noredirect") === -1) {
+          if (lang.startsWith("de")) {
+            window.location.replace("/de/posts/");
+          } else if (lang.startsWith("th")) {
+            window.location.replace("/th/posts/");
+          } else if (lang.startsWith("en")) {
+            window.location.replace("/en/posts/");
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="lang-select">
+      <h1>Chang Diving - Posts</h1>
+      <div class="lang-btns">
+        <a href="/en/posts/">🇬🇧 English</a>
+        <a href="/de/posts/">🇩🇪 Deutsch</a>
+        <a href="/th/posts/">🇹🇭 ไทย</a>
+      </div>
+      <div class="note">
+        You will be redirected automatically based on your browser language.<br />
+        If not, please select your language above.
+      </div>
+    </div>
+  </body>
+</html> 
