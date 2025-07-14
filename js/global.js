@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/en/product/snorkeling/">Snorkeling</a>
         </div>
         <div class="three columns">
-          <a href="/en/store/category/packages/">Packages</a>
           <a href="/en/product/open-advanced-package/">OW & Advanced</a>
           <a href="/en/product/deep-wreck-nitrox/">Deep, Wreck, Nitrox</a>
           <a href="/en/product/open-to-divemaster/">Open to Divemaster</a>
@@ -224,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/de/product/snorkeling/">Snorkeling</a>
         </div>
         <div class="three columns">
-          <a href="/de/store/category/packages/">Packages</a>
           <a href="/de/product/open-advanced-package/">OW & Advanced</a>
           <a href="/de/product/deep-wreck-nitrox/">Deep, Wreck, Nitrox</a>
           <a href="/de/product/open-to-divemaster/">Open to Divemaster</a>
@@ -284,7 +282,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/th/product/snorkeling/">Snorkeling</a>
         </div>
         <div class="three columns">
-          <a href="/th/store/category/packages/">Packages</a>
           <a href="/th/product/open-advanced-package/">OW & Advanced</a>
           <a href="/th/product/deep-wreck-nitrox/">Deep, Wreck, Nitrox</a>
           <a href="/th/product/open-to-divemaster/">Open to Divemaster</a>
