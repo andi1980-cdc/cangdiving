@@ -143,8 +143,6 @@
     />
 
     <!-- Preconnect for External Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.trustindex.io" />
 
     <!-- Performance Optimizations -->
@@ -178,30 +176,22 @@
       }
     </script>
 
-    <!-- Google Fonts: Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="/style.css"
-      media="all"
-      
-    />
-    <noscript><link rel="stylesheet" href="/style.css" /></noscript>
+    <!-- Critical CSS and Font Loading -->
+    <link rel="stylesheet" href="/fonts/fonts.css" media="all" />
+    <link rel="stylesheet" href="/style.css" media="all" />
+    <noscript>
+      <link rel="stylesheet" href="/fonts/fonts.css" />
+      <link rel="stylesheet" href="/style.css" />
+    </noscript>
   </head>
   <body>
     <main>
-      <div class="changdiving-document-box red">
-        <div class="document-header">
-          <div class="lang-switch">
+      <div class="changdiving-box">
+        <div class="lang-switch">
             <button class="menu-toggle">☰ Menu</button>
-            <a href="/en/about/refund-policy/">🇬🇧</a>
-            <a href="/de/about/refund-policy/">🇩🇪</a>
-            <a href="/th/about/refund-policy/">🇹🇭</a>
+            <a href="/en/refund-policy/">🇬🇧</a>
+            <a href="/de/refund-policy/">🇩🇪</a>
+            <a href="/th/refund-policy/">🇹🇭</a>
             <div class="dropdown-menu">
               <a href="/th/store/category/courses/">Courses</a>
               <a href="/th/store/category/day-trips/">Day Trips</a>
@@ -215,9 +205,10 @@
               <a href="/th/contact/">Contact</a>
             </div>
           </div>
-        </div>
 
-        <h1นโยบายการคืนเงินสำหรับหลักสูตรและกิจกรรม>นโยบายการคืนเงินสำหรับหลักสูตรและกิจกรรม</h1>
+        <nav id="breadcrumb" class="breadcrumb"></nav>
+        <hr />
+        <h1>นโยบายการคืนเงินสำหรับหลักสูตรและกิจกรรม</h1>
 
         <p>
           การจอง/การซื้อหลักสูตรดำน้ำและทริปดำน้ำทั้งหมดจะต้องได้รับการยืนยันภายใน
@@ -305,16 +296,8 @@
     </main>
 
     <!-- Cookie Consent Banner TH -->
-    <link
-      rel="stylesheet"
-      href="/css/cookieconsent.min.css"
-      media="all"
-      
-    />
-    <script
-      src="/js/cookieconsent.min.js"
-      defer
-    ></script>
+    <link rel="stylesheet" href="/css/cookieconsent.min.css" media="all" />
+    <script src="/js/cookieconsent.min.js" defer></script>
     <!-- WhatsApp Button -->
     <a
       href="https://wa.me/66894013927"
