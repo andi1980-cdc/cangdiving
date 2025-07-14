@@ -33,10 +33,11 @@
     <p>Redirecting to the appropriate 404 page...</p>
     
     <script>
-        // Detect language from URL path
+        // Detect language from URL path first
         const path = window.location.pathname;
-        let targetUrl = '/en/404/'; // Default fallback
+        let targetUrl = null;
         
+        // 1. Check URL path for language
         if (path.startsWith('/de/')) {
             targetUrl = '/de/404/';
         } else if (path.startsWith('/th/')) {
@@ -45,7 +46,21 @@
             targetUrl = '/en/404/';
         }
         
-        // Redirect immediately
+        // 2. If no language in URL, detect browser language
+        if (!targetUrl) {
+            const browserLang = navigator.language || navigator.languages[0] || 'en';
+            
+            if (browserLang.startsWith('de')) {
+                targetUrl = '/de/404/';
+            } else if (browserLang.startsWith('th')) {
+                targetUrl = '/th/404/';
+            } else {
+                // English as final fallback (including en-US, en-GB, etc.)
+                targetUrl = '/en/404/';
+            }
+        }
+        
+        // Redirect to appropriate 404 page
         window.location.replace(targetUrl);
     </script>
 </body>
