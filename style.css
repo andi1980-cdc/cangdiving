@@ -2186,6 +2186,24 @@ html[lang="th"] .contact-cta h2 {
   padding-bottom: 0.08em;
 }
 
+/* Fix for Thai text in inline-styled h2 elements (high specificity) */
+html[lang="th"] h2[style*="font-size"],
+html[lang="th"] h1[style*="font-size"],
+html[lang="th"] h3[style*="font-size"] {
+  line-height: 1.4 !important;
+  padding-top: 0.12em !important;
+  padding-bottom: 0.08em !important;
+}
+
+/* Fix for Thai text in gradient headings */
+html[lang="th"] h2[style*="background: linear-gradient"],
+html[lang="th"] h1[style*="background: linear-gradient"],
+html[lang="th"] h3[style*="background: linear-gradient"] {
+  line-height: 1.4 !important;
+  padding-top: 0.12em !important;
+  padding-bottom: 0.08em !important;
+}
+
 /* Mobile responsive fixes for Thai */
 @media (max-width: 700px) {
   html[lang="th"] .grid-container h1,
@@ -2211,6 +2229,18 @@ html[lang="th"] .contact-cta h2 {
     padding-top: 0.12em;
     padding-bottom: 0.08em;
   }
+
+  /* Mobile fixes for inline-styled Thai headings */
+  html[lang="th"] h2[style*="font-size"],
+  html[lang="th"] h1[style*="font-size"],
+  html[lang="th"] h3[style*="font-size"],
+  html[lang="th"] h2[style*="background: linear-gradient"],
+  html[lang="th"] h1[style*="background: linear-gradient"],
+  html[lang="th"] h3[style*="background: linear-gradient"] {
+    line-height: 1.45 !important;
+    padding-top: 0.15em !important;
+    padding-bottom: 0.1em !important;
+  }
 }
 
 /* Fix for Thai text overflow in smaller containers */
@@ -2220,5 +2250,17 @@ html[lang="th"] .contact-cta h2 {
     line-height: 1.55 !important;
     padding-top: 0.2em;
     padding-bottom: 0.15em;
+  }
+
+  /* Ultra-mobile fixes for inline-styled Thai headings */
+  html[lang="th"] h2[style*="font-size"],
+  html[lang="th"] h1[style*="font-size"],
+  html[lang="th"] h3[style*="font-size"],
+  html[lang="th"] h2[style*="background: linear-gradient"],
+  html[lang="th"] h1[style*="background: linear-gradient"],
+  html[lang="th"] h3[style*="background: linear-gradient"] {
+    line-height: 1.5 !important;
+    padding-top: 0.18em !important;
+    padding-bottom: 0.12em !important;
   }
 }
