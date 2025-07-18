@@ -3,6 +3,7 @@
 /**
  * Automatic Sitemap Generator for Chang Diving Center
  * Scans all HTML files and generates XML sitemap with proper URLs
+ * Excludes noindex pages and redirect pages
  */
 
 const fs = require('fs');
@@ -80,6 +81,42 @@ function getChangeFreq(urlPath) {
   return changefreqMap.default;
 }
 
+/**
+ * Check if HTML file should be excluded from sitemap
+ * @param {string} filePath - Path to the HTML file
+ * @returns {boolean} - True if should be excluded
+ */
+function shouldExcludeHtmlFile(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    // Check for noindex meta tag
+    const noindexRegex = /<meta[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex[^"']*["'][^>]*>/i;
+    if (noindexRegex.test(content)) {
+      console.log(`  ⚠️  Excluding (noindex): ${filePath}`);
+      return true;
+    }
+    
+    // Check for JavaScript redirects
+    const redirectRegex = /window\.location\.(replace|href)\s*=|location\.replace\s*\(/i;
+    if (redirectRegex.test(content)) {
+      console.log(`  🔄 Excluding (redirect): ${filePath}`);
+      return true;
+    }
+    
+    // Check for 404 pages (by path or title)
+    if (filePath.includes('/404/') || content.includes('404') && content.includes('not found')) {
+      console.log(`  🚫 Excluding (404 page): ${filePath}`);
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.log(`  ❌ Error reading ${filePath}: ${error.message}`);
+    return true; // Exclude if we can't read it
+  }
+}
+
 function scanDirectory(dir, urls = []) {
   const files = fs.readdirSync(dir);
   
@@ -94,6 +131,11 @@ function scanDirectory(dir, urls = []) {
     if (stat.isDirectory()) {
       scanDirectory(filePath, urls);
     } else if (file === 'index.html') {
+      // Check if this HTML file should be excluded
+      if (shouldExcludeHtmlFile(filePath)) {
+        continue;
+      }
+      
       // Convert file path to URL
       let urlPath = filePath.replace(/\\/g, '/');
       
@@ -171,14 +213,15 @@ function generateLanguageStats(urls) {
 }
 
 // Main execution
-console.log('🗺️  Chang Diving Center Sitemap Generator');
-console.log('==========================================');
+console.log('🗺️  Chang Diving Center Sitemap Generator (Enhanced)');
+console.log('==================================================');
 
 try {
   console.log('📁 Scanning directories for HTML files...');
+  console.log('🔍 Checking for noindex and redirect pages...');
   const urls = scanDirectory('.');
   
-  console.log('📊 Statistics:');
+  console.log('\n📊 Statistics:');
   const stats = generateLanguageStats(urls);
   
   for (const [lang, count] of Object.entries(stats)) {
@@ -207,6 +250,11 @@ try {
   const stats_file = fs.statSync(config.outputFile);
   const fileSize = (stats_file.size / 1024).toFixed(2);
   console.log(`📊 File size: ${fileSize} KB`);
+  
+  console.log('\n✨ Enhanced features:');
+  console.log('   • Excluded noindex pages');
+  console.log('   • Excluded redirect pages'); 
+  console.log('   • Excluded 404 pages');
   
 } catch (error) {
   console.error('❌ Error generating sitemap:', error);
