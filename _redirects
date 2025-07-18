@@ -20,4 +20,4 @@
 /wp-includes/* /404.html 404
 
 # Fallback for any other non-existent paths  
-/* /404.html 404 
+/* /404.html 404
