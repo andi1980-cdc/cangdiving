@@ -1,0 +1,17 @@
+# Cloudflare Pages Redirects - Fix SEO Catastrophe
+# Root language selection (only for exact root paths)
+/ /index.html 200
+
+# Language-specific redirects for exact root paths only
+/de /de/index.html 200
+/en /en/index.html 200  
+/th /th/index.html 200
+
+# 404 handling for non-existent paths under language directories
+# This prevents /de/2025/05/ from showing the language selection page
+/de/* /de/404/index.html 404
+/en/* /en/404/index.html 404
+/th/* /th/404/index.html 404
+
+# Fallback for any other non-existent paths
+/* /404.html 404 
