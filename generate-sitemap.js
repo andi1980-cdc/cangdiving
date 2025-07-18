@@ -150,6 +150,11 @@ function scanDirectory(dir, urls = []) {
       // Handle root index.html
       if (urlPath === '/') {
         urlPath = '';
+      } else {
+        // Add trailing slash for consistency with actual website URLs
+        if (!urlPath.endsWith('/')) {
+          urlPath += '/';
+        }
       }
       
       const fullUrl = config.baseUrl + urlPath;
