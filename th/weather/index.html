@@ -94,8 +94,7 @@
         isolation: isolate !important;
       }
       
-      /* CRITICAL: Cookie consent critical CSS inlined to prevent 189ms blocking */
-      .cc-banner,.cc-floating{position:fixed;z-index:9999;display:flex;flex-wrap:nowrap;font-family:inherit;font-size:16px;line-height:1.5;flex-direction:row;align-items:center}.cc-banner{bottom:0;left:0;right:0;padding:1em;background-color:#000}.cc-floating{padding:2em;max-width:24em;flex-direction:column}.cc-banner .cc-message{display:block;flex:1;max-width:none;margin-right:1em}.cc-floating .cc-message{margin-bottom:1em}.cc-message{color:#fff}.cc-btn{text-decoration:none;transition:all .2s;border:0;border-radius:0;cursor:pointer;font-family:inherit;font-size:inherit;line-height:1.5;padding:.4em .8em;white-space:nowrap}.cc-banner .cc-btn{flex-shrink:0}.cc-highlight .cc-btn{background:#f1d600;color:#000}.cc-btn:focus,.cc-btn:hover{transform:scale(1.1)}.cc-banner{background:#000;border-top:1px solid #484848;color:#fff}.cc-btn{background:#f1d600;color:#000;border-radius:4px}
+             /* CRITICAL: Cookie consent will be loaded async */
       
       /* CRITICAL: Layout performance for all elements */
       main, section, article, div, h1, h2, h3 {
@@ -438,6 +437,9 @@
       media="all"
       
     />
+    <!-- Cookie Consent Banner TH - Restore full CSS -->
+    <link rel="preload" href="/css/cookieconsent.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/cookieconsent.min.css"></noscript>
     <script
       src="/js/cookieconsent.min.js"
       defer
