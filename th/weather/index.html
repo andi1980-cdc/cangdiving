@@ -294,27 +294,76 @@
 
         <h2>พยากรณ์ลม</h2>
         <p>อัปเดตสภาพลมของเกาะช้างแบบเรียลไทม์ด้วยวิดเจ็ต Windguru ด้านล่าง</p>
-        <iframe 
-          src="https://www.windguru.cz/widget-fcst-iframe.php?s=208446&m=100&uid=wg_fwdg_208446_100_1751105218770&wj=knots&tj=c&waj=m&tij=cm&odh=0&doh=24&fhours=240&hrsm=2&vt=forecasts&lng=en&idbs=1&p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING"
-          style="border:none; width:100%; height:350px; border-radius: 8px;"
-          scrolling="no"
-          seamless="seamless"
-          title="พยากรณ์ลมสำหรับเกาะช้าง"
-          loading="lazy"
-        ></iframe>
+        <div style="height: 350px; width: 100%; contain: layout size style;">
+          <script id="wg_fwdg_208446_100_1751105218770">
+            (function (window, document) {
+              var loader = function () {
+                var arg = [
+                  "s=208446",
+                  "m=100",
+                  "uid=wg_fwdg_208446_100_1751105218770",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=2",
+                  "vt=forecasts",
+                  "lng=en",
+                  "idbs=1",
+                  "p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
+        </div>
         <h2>พยากรณ์คลื่น</h2>
         <p>
           วางแผนการดำน้ำอย่างมั่นใจด้วยพยากรณ์คลื่น ตรวจสอบระดับคลื่น ทิศทาง
           และอื่น ๆ ได้ที่นี่
         </p>
-        <iframe 
-          src="https://www.windguru.cz/widget-fcst-iframe.php?s=208446&m=84&uid=wg_fwdg_208446_84_1751105407164&wj=knots&tj=c&waj=m&tij=cm&odh=0&doh=24&fhours=240&hrsm=3&vt=forecasts&lng=en&p=HTSGW,PERPW,DIRPW,WVDIR"
-          style="border:none; width:100%; height:300px; border-radius: 8px;"
-          scrolling="no"
-          seamless="seamless"
-          title="พยากรณ์คลื่นสำหรับเกาะช้าง"
-          loading="lazy"
-        ></iframe>
+        <div style="height: 300px; width: 100%; contain: layout size style;">
+          <script id="wg_fwdg_208446_84_1751105407164">
+            (function (window, document) {
+              var loader = function () {
+                var arg = [
+                  "s=208446",
+                  "m=84",
+                  "uid=wg_fwdg_208446_84_1751105407164",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=3",
+                  "vt=forecasts",
+                  "lng=en",
+                  "p=HTSGW,PERPW,DIRPW,WVDIR",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
+        </div>
         <p>
           <strong>สำคัญ:</strong> หากระดับคลื่นเกิน 0.8 เมตร
           เราอาจยกเลิกการดำน้ำเพื่อความปลอดภัย ความปลอดภัยของคุณมาก่อนเสมอ

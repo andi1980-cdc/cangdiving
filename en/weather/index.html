@@ -300,27 +300,76 @@
           Stay informed about wind conditions on Koh Chang. Use the Windguru
           widget below for real-time updates.
         </p>
-        <iframe 
-          src="https://www.windguru.cz/widget-fcst-iframe.php?s=208446&m=100&uid=wg_fwdg_208446_100_1751105218770&wj=knots&tj=c&waj=m&tij=cm&odh=0&doh=24&fhours=240&hrsm=2&vt=forecasts&lng=en&idbs=1&p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING"
-          style="border:none; width:100%; height:350px; border-radius: 8px;"
-          scrolling="no"
-          seamless="seamless"
-          title="Wind Forecast for Koh Chang"
-          loading="lazy"
-        ></iframe>
+        <div style="height: 350px; width: 100%; contain: layout size style;">
+          <script id="wg_fwdg_208446_100_1751105218770">
+            (function (window, document) {
+              var loader = function () {
+                var arg = [
+                  "s=208446",
+                  "m=100",
+                  "uid=wg_fwdg_208446_100_1751105218770",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=2",
+                  "vt=forecasts",
+                  "lng=en",
+                  "idbs=1",
+                  "p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
+        </div>
         <h2>Wave Forecast</h2>
         <p>
           Plan your dives with confidence using the wave forecast. Check wave
           heights, swell directions, and more below.
         </p>
-        <iframe 
-          src="https://www.windguru.cz/widget-fcst-iframe.php?s=208446&m=84&uid=wg_fwdg_208446_84_1751105407164&wj=knots&tj=c&waj=m&tij=cm&odh=0&doh=24&fhours=240&hrsm=3&vt=forecasts&lng=en&p=HTSGW,PERPW,DIRPW,WVDIR"
-          style="border:none; width:100%; height:300px; border-radius: 8px;"
-          scrolling="no"
-          seamless="seamless"
-          title="Wave Forecast for Koh Chang"
-          loading="lazy"
-        ></iframe>
+        <div style="height: 300px; width: 100%; contain: layout size style;">
+          <script id="wg_fwdg_208446_84_1751105407164">
+            (function (window, document) {
+              var loader = function () {
+                var arg = [
+                  "s=208446",
+                  "m=84",
+                  "uid=wg_fwdg_208446_84_1751105407164",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=3",
+                  "vt=forecasts",
+                  "lng=en",
+                  "p=HTSGW,PERPW,DIRPW,WVDIR",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
+        </div>
         <p>
           <strong>Important:</strong> For safety reasons, we may cancel dives if
           wave heights exceed 0.8 meters. Safety is always our top priority, and
