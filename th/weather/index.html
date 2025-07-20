@@ -146,6 +146,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.trustindex.io" />
+    <link rel="preconnect" href="https://www.windguru.cz" />
 
     <!-- Performance Optimizations -->
     <link rel="dns-prefetch" href="//www.youtube.com" />
@@ -178,18 +179,24 @@
       }
     </script>
 
-    <!-- Google Fonts: Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Optimized Google Fonts: Roboto with font-display:swap -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link
       rel="stylesheet"
       href="/style.css"
-      media="all"
-      
+      media="print"
+      onload="this.media='all'"
     />
     <noscript><link rel="stylesheet" href="/style.css" />    <!-- Critical Image Preload -->
     <link
@@ -209,7 +216,15 @@
       <div class="hero">
         <div class="hero-logo">
           <a href="/th/">
-            <img src="/img/logos/logo_cdc.webp" alt="โลโก้ ช้างไดฟ์วิ่ง" />
+            <img 
+              src="/img/logos/logo_cdc.webp" 
+              alt="โลโก้ ช้างไดฟ์วิ่ง"
+              width="71"
+              height="70"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
           </a>
         </div>
 
