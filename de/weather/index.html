@@ -21,7 +21,7 @@
         margin: 1rem 0 !important;
       }
       
-      /* CRITICAL: Windguru container lockdown - ZERO layout shifts + REFLOW PREVENTION */
+            /* NUCLEAR OPTION: ABSOLUTE LAYOUT ISOLATION - WINDGURU CANNOT ESCAPE */
       .windguru-container { 
         height: 350px !important;
         min-height: 350px !important;
@@ -35,6 +35,10 @@
         display: block !important;
         border-radius: 8px !important;
         isolation: isolate !important;
+        /* NUCLEAR: Create new stacking context and layout boundary */
+        transform-style: preserve-3d !important;
+        backface-visibility: hidden !important;
+        perspective: 1000px !important;
       }
       .windguru-container:last-of-type {
         height: 300px !important;
@@ -42,24 +46,84 @@
         max-height: 300px !important;
       }
       
-      /* CRITICAL: Prevent ALL forced reflows */
-      iframe[src*="windguru"] {
+      /* NUCLEAR: Force all windguru content into absolute positioned overlay */
+      .windguru-container::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+        background: transparent !important;
+      }
+      
+      /* NUCLEAR: Windguru content must stay within absolute bounds */
+      .windguru-container > * {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
         width: 100% !important;
         height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+        contain: layout size style paint !important;
+        z-index: 2 !important;
+      }
+      
+      /* NUCLEAR: Windguru iframes MUST be contained */
+      iframe[src*="windguru"],
+      iframe[id*="iFrameResizer"] {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
         border: none !important;
-        display: block !important;
+        overflow: hidden !important;
         contain: layout size style paint !important;
         will-change: transform !important;
         transform: translateZ(0) !important;
         isolation: isolate !important;
+        z-index: 3 !important;
+        /* NUCLEAR: Prevent any size changes */
+        resize: none !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
       }
       
-             /* CRITICAL: Cookie consent will be loaded async */
+      /* NUCLEAR: Kill all windguru resize scripts */
+      script[src*="windguru"] {
+        display: none !important;
+      }
       
-      /* CRITICAL: Layout performance for all elements */
+      /* CRITICAL: Cookie consent will be loaded async */
+      
+      /* NUCLEAR: Global layout lockdown */
       main, section, article, div, h1, h2, h3 {
         contain: layout !important;
         will-change: auto !important;
+      }
+      
+      /* NUCLEAR: Disable ALL dynamic resizing globally */
+      * {
+        resize: none !important;
+      }
+      
+      /* NUCLEAR: Prevent iframe resizer scripts from working */
+      [id*="iFrameResizer"],
+      [class*="iFrameResizer"] {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+        contain: layout size style paint !important;
       }
     </style>
     
