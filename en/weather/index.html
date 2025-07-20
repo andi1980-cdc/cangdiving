@@ -144,10 +144,9 @@
       type="image/x-icon"
     />
 
-    <!-- Preconnect for External Resources -->
+    <!-- Critical Preconnects Only (remove unused) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.trustindex.io" />
 
     <!-- Performance Optimizations -->
     <link rel="dns-prefetch" href="//www.youtube.com" />
@@ -180,12 +179,104 @@
       }
     </script>
 
-    <!-- Optimized Google Fonts: Roboto with font-display:optional -->
+    <!-- CRITICAL: Inline CSS to prevent ANY layout shifts -->
+    <style>
+      /* CRITICAL: Force system fonts to prevent font loading shifts */
+      *, *::before, *::after {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+        box-sizing: border-box !important;
+      }
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important; 
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      h1, h2, h3, h4, h5, h6 { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        margin: 1rem 0 !important;
+      }
+      
+      /* CRITICAL: Windguru container lockdown - ZERO layout shifts + REFLOW PREVENTION */
+      .windguru-container { 
+        height: 350px !important;
+        min-height: 350px !important;
+        max-height: 350px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        contain: layout size style paint !important;
+        transform: translateZ(0) !important;
+        will-change: transform !important;
+        display: block !important;
+        border-radius: 8px !important;
+        isolation: isolate !important;
+      }
+      .windguru-container:last-of-type {
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
+      }
+      
+      /* CRITICAL: Prevent ALL forced reflows */
+      iframe[src*="windguru"] {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        display: block !important;
+        contain: layout size style paint !important;
+        will-change: transform !important;
+        transform: translateZ(0) !important;
+        isolation: isolate !important;
+      }
+      
+      /* CRITICAL: Layout performance for all elements */
+      main, section, article, div, h1, h2, h3 {
+        contain: layout !important;
+        will-change: auto !important;
+      }
+      
+      /* CRITICAL: Force all windguru content to stay within bounds */
+      .windguru-container *,
+      .windguru-container iframe,
+      .windguru-container div,
+      .windguru-container table {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        contain: layout !important;
+      }
+      
+      /* CRITICAL: Lock down all dynamically created iframes */
+      iframe[src*="windguru"] {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        border: none !important;
+        overflow: hidden !important;
+        display: block !important;
+        contain: layout size !important;
+      }
+      
+             /* CRITICAL: Cookie consent critical CSS inlined to prevent 189ms blocking */
+       .cc-banner,.cc-floating{position:fixed;z-index:9999;display:flex;flex-wrap:nowrap;font-family:inherit;font-size:16px;line-height:1.5;flex-direction:row;align-items:center}.cc-banner{bottom:0;left:0;right:0;padding:1em;background-color:#000}.cc-floating{padding:2em;max-width:24em;flex-direction:column}.cc-banner .cc-message{display:block;flex:1;max-width:none;margin-right:1em}.cc-floating .cc-message{margin-bottom:1em}.cc-message{color:#fff}.cc-btn{text-decoration:none;transition:all .2s;border:0;border-radius:0;cursor:pointer;font-family:inherit;font-size:inherit;line-height:1.5;padding:.4em .8em;white-space:nowrap}.cc-banner .cc-btn{flex-shrink:0}.cc-highlight .cc-btn{background:#f1d600;color:#000}.cc-btn:focus,.cc-btn:hover{transform:scale(1.1)}.cc-banner{background:#000;border-top:1px solid #484848;color:#fff}.cc-btn{background:#f1d600;color:#000;border-radius:4px}
+       
+       /* CRITICAL: Prevent any content from breaking out */
+       main, section, article, div {
+         contain: layout !important;
+       }
+    </style>
+    
+    <!-- Load fonts after critical CSS to prevent shifts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=optional"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media='all'; this.onload=null;"
     />
     <noscript>
       <link
@@ -193,13 +284,9 @@
         rel="stylesheet"
       />
     </noscript>
-    <link
-      rel="stylesheet"
-      href="/style.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="/style.css" />    <!-- Critical Image Preload -->
+    <!-- CRITICAL: Preload main stylesheet async to prevent blocking -->
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/style.css"></noscript>    <!-- Critical Image Preload -->
     <link
       rel="preload"
       as="image"
@@ -300,131 +387,28 @@
           Stay informed about wind conditions on Koh Chang. Use the Windguru
           widget below for real-time updates.
         </p>
-        <div class="windguru-container" style="
-          min-height: 350px; 
-          width: 100%; 
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-          border-radius: 8px;
-          contain: layout size style;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        ">
-          <div class="windguru-placeholder" style="
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1976d2;
-            font-weight: 500;
-            z-index: 1;
-          ">Loading Wind Forecast...</div>
-          <script id="wg_fwdg_208446_100_1751105218770">
-            (function (window, document) {
-              var loader = function () {
-                // Hide placeholder when widget loads
-                setTimeout(function() {
-                  var placeholder = document.querySelector('.windguru-placeholder');
-                  if (placeholder) placeholder.style.display = 'none';
-                }, 2000);
-                
-                var arg = [
-                  "s=208446",
-                  "m=100",
-                  "uid=wg_fwdg_208446_100_1751105218770",
-                  "wj=knots",
-                  "tj=c",
-                  "waj=m",
-                  "tij=cm",
-                  "odh=0",
-                  "doh=24",
-                  "fhours=240",
-                  "hrsm=2",
-                  "vt=forecasts",
-                  "lng=en",
-                  "idbs=1",
-                  "p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING",
-                ];
-                var script = document.createElement("script");
-                var tag = document.getElementsByTagName("script")[0];
-                script.src =
-                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
-                tag.parentNode.insertBefore(script, tag);
-              };
-              window.addEventListener
-                ? window.addEventListener("load", loader, false)
-                : window.attachEvent("onload", loader);
-            })(window, document);
-          </script>
+        <div class="windguru-container">
+          <iframe 
+            src="https://www.windguru.cz/int/index.php?sc=208446" 
+            style="width: 100%; height: 350px; border: none; border-radius: 8px;"
+            title="Wind Forecast Widget for Koh Chang - Interactive weather data"
+            aria-label="Wind forecast showing wind speed, direction and weather conditions"
+            loading="lazy"
+          ></iframe>
         </div>
         <h2>Wave Forecast</h2>
         <p>
           Plan your dives with confidence using the wave forecast. Check wave
           heights, swell directions, and more below.
         </p>
-        <div class="windguru-container" style="
-          min-height: 300px; 
-          width: 100%; 
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-          border-radius: 8px;
-          contain: layout size style;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        ">
-          <div class="windguru-placeholder" style="
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #388e3c;
-            font-weight: 500;
-            z-index: 1;
-          ">Loading Wave Forecast...</div>
-          <script id="wg_fwdg_208446_84_1751105407164">
-            (function (window, document) {
-              var loader = function () {
-                // Hide placeholder when widget loads
-                setTimeout(function() {
-                  var placeholders = document.querySelectorAll('.windguru-placeholder');
-                  placeholders.forEach(function(p) {
-                    if (p.textContent.includes('Wave')) p.style.display = 'none';
-                  });
-                }, 2000);
-                
-                var arg = [
-                  "s=208446",
-                  "m=84",
-                  "uid=wg_fwdg_208446_84_1751105407164",
-                  "wj=knots",
-                  "tj=c",
-                  "waj=m",
-                  "tij=cm",
-                  "odh=0",
-                  "doh=24",
-                  "fhours=240",
-                  "hrsm=3",
-                  "vt=forecasts",
-                  "lng=en",
-                  "p=HTSGW,PERPW,DIRPW,WVDIR",
-                ];
-                var script = document.createElement("script");
-                var tag = document.getElementsByTagName("script")[0];
-                script.src =
-                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
-                tag.parentNode.insertBefore(script, tag);
-              };
-              window.addEventListener
-                ? window.addEventListener("load", loader, false)
-                : window.attachEvent("onload", loader);
-            })(window, document);
-          </script>
+        <div class="windguru-container">
+          <iframe 
+            src="https://www.windguru.cz/int/index.php?sc=208446&tcol=&ccolor=fff" 
+            style="width: 100%; height: 300px; border: none; border-radius: 8px;"
+            title="Wave Forecast Widget for Koh Chang - Interactive wave and sea conditions"
+            aria-label="Wave forecast showing wave height, period, direction and sea conditions"
+            loading="lazy"
+          ></iframe>
         </div>
         <p>
           <strong>Important:</strong> For safety reasons, we may cancel dives if
@@ -480,13 +464,7 @@
       </section>
     </main>
 
-    <!-- Cookie Consent Banner EN -->
-    <link
-      rel="stylesheet"
-      href="/css/cookieconsent.min.css"
-      media="all"
-      
-    />
+    <!-- Cookie Consent Banner EN - Critical CSS inlined above -->
     <script
       src="/js/cookieconsent.min.js"
       defer
