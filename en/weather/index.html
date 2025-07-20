@@ -387,13 +387,62 @@
           widget below for real-time updates.
         </p>
         <div class="windguru-container">
-          <iframe 
-            src="https://www.windguru.cz/int/index.php?sc=208446" 
-            style="width: 100%; height: 350px; border: none; border-radius: 8px;"
-            title="Wind Forecast Widget for Koh Chang - Interactive weather data"
-            aria-label="Wind forecast showing wind speed, direction and weather conditions"
-            loading="lazy"
-          ></iframe>
+          <div class="windguru-placeholder" style="
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1976d2;
+            font-weight: 500;
+            z-index: 1;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+          ">Loading Wind Forecast...</div>
+          <script id="wg_fwdg_208446_100_1751105218770">
+            (function (window, document) {
+              var loader = function () {
+                // Hide placeholder when widget loads
+                setTimeout(function() {
+                  var placeholder = document.querySelector('.windguru-placeholder');
+                  if (placeholder) placeholder.style.display = 'none';
+                  
+                  // Add accessibility titles to dynamically created iframes
+                  var windIframes = document.querySelectorAll('iframe[src*="windguru.cz"][src*="m=100"]');
+                  windIframes.forEach(function(iframe) {
+                    iframe.setAttribute('title', 'Wind Forecast Widget for Koh Chang - Interactive weather data');
+                    iframe.setAttribute('aria-label', 'Wind forecast showing wind speed, direction and weather conditions');
+                  });
+                }, 2000);
+                
+                var arg = [
+                  "s=208446",
+                  "m=100",
+                  "uid=wg_fwdg_208446_100_1751105218770",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=2",
+                  "vt=forecasts",
+                  "lng=en",
+                  "idbs=1",
+                  "p=WINDSPD,GUST,SMER,TMPE,CDC,APCP1s,SLP,RH,RATING",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
         </div>
         <h2>Wave Forecast</h2>
         <p>
@@ -401,13 +450,63 @@
           heights, swell directions, and more below.
         </p>
         <div class="windguru-container">
-          <iframe 
-            src="https://www.windguru.cz/int/index.php?sc=208446&tcol=&ccolor=fff" 
-            style="width: 100%; height: 300px; border: none; border-radius: 8px;"
-            title="Wave Forecast Widget for Koh Chang - Interactive wave and sea conditions"
-            aria-label="Wave forecast showing wave height, period, direction and sea conditions"
-            loading="lazy"
-          ></iframe>
+          <div class="windguru-placeholder" style="
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #388e3c;
+            font-weight: 500;
+            z-index: 1;
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border-radius: 8px;
+          ">Loading Wave Forecast...</div>
+          <script id="wg_fwdg_208446_84_1751105407164">
+            (function (window, document) {
+              var loader = function () {
+                // Hide placeholder when widget loads
+                setTimeout(function() {
+                  var placeholders = document.querySelectorAll('.windguru-placeholder');
+                  placeholders.forEach(function(p) {
+                    if (p.textContent.includes('Wave')) p.style.display = 'none';
+                  });
+                  
+                  // Add accessibility titles to dynamically created iframes
+                  var waveIframes = document.querySelectorAll('iframe[src*="windguru.cz"][src*="m=84"]');
+                  waveIframes.forEach(function(iframe) {
+                    iframe.setAttribute('title', 'Wave Forecast Widget for Koh Chang - Interactive wave and sea conditions');
+                    iframe.setAttribute('aria-label', 'Wave forecast showing wave height, period, direction and sea conditions');
+                  });
+                }, 2000);
+                
+                var arg = [
+                  "s=208446",
+                  "m=84",
+                  "uid=wg_fwdg_208446_84_1751105407164",
+                  "wj=knots",
+                  "tj=c",
+                  "waj=m",
+                  "tij=cm",
+                  "odh=0",
+                  "doh=24",
+                  "fhours=240",
+                  "hrsm=3",
+                  "vt=forecasts",
+                  "lng=en",
+                  "p=HTSGW,PERPW,DIRPW,WVDIR",
+                ];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src =
+                  "https://www.windguru.cz/js/widget.php?" + arg.join("&");
+                tag.parentNode.insertBefore(script, tag);
+              };
+              window.addEventListener
+                ? window.addEventListener("load", loader, false)
+                : window.attachEvent("onload", loader);
+            })(window, document);
+          </script>
         </div>
         <p>
           <strong>Important:</strong> For safety reasons, we may cancel dives if
