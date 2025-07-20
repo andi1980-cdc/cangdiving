@@ -300,10 +300,37 @@
           Stay informed about wind conditions on Koh Chang. Use the Windguru
           widget below for real-time updates.
         </p>
-        <div style="height: 350px; width: 100%; contain: layout size style;">
+        <div class="windguru-container" style="
+          min-height: 350px; 
+          width: 100%; 
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+          border-radius: 8px;
+          contain: layout size style;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        ">
+          <div class="windguru-placeholder" style="
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1976d2;
+            font-weight: 500;
+            z-index: 1;
+          ">Loading Wind Forecast...</div>
           <script id="wg_fwdg_208446_100_1751105218770">
             (function (window, document) {
               var loader = function () {
+                // Hide placeholder when widget loads
+                setTimeout(function() {
+                  var placeholder = document.querySelector('.windguru-placeholder');
+                  if (placeholder) placeholder.style.display = 'none';
+                }, 2000);
+                
                 var arg = [
                   "s=208446",
                   "m=100",
@@ -338,10 +365,39 @@
           Plan your dives with confidence using the wave forecast. Check wave
           heights, swell directions, and more below.
         </p>
-        <div style="height: 300px; width: 100%; contain: layout size style;">
+        <div class="windguru-container" style="
+          min-height: 300px; 
+          width: 100%; 
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+          border-radius: 8px;
+          contain: layout size style;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        ">
+          <div class="windguru-placeholder" style="
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #388e3c;
+            font-weight: 500;
+            z-index: 1;
+          ">Loading Wave Forecast...</div>
           <script id="wg_fwdg_208446_84_1751105407164">
             (function (window, document) {
               var loader = function () {
+                // Hide placeholder when widget loads
+                setTimeout(function() {
+                  var placeholders = document.querySelectorAll('.windguru-placeholder');
+                  placeholders.forEach(function(p) {
+                    if (p.textContent.includes('Wave')) p.style.display = 'none';
+                  });
+                }, 2000);
+                
                 var arg = [
                   "s=208446",
                   "m=84",
