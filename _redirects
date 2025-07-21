@@ -1,7 +1,15 @@
+# Serve existing files directly
+/* /index.html 200
+
 # Language root paths
 /de /de/index.html 200
 /en /en/index.html 200
 /th /th/index.html 200
 
-# All 404s go to English version
+# Language-specific 404s only if file doesn't exist
+/de/* /de/404/index.html 404!
+/en/* /en/404/index.html 404!
+/th/* /th/404/index.html 404!
+
+# URLs without language code go to English 404
 /* /en/404/index.html 404
