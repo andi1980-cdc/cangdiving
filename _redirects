@@ -10,6 +10,11 @@ https://www.changdiving.com/* https://changdiving.com/:splat 301!
 /en /en/index.html 200  
 /th /th/index.html 200
 
+# Redirect all sub-URLs under /store/category/equipment/ to the base category page
+/de/store/category/equipment/*   /de/store/category/equipment/   301!
+/en/store/category/equipment/*   /en/store/category/equipment/   301!
+/th/store/category/equipment/*   /th/store/category/equipment/   301!
+
 # 404 handling for non-existent paths under language directories
 # This prevents /de/2025/05/ from showing the language selection page
 /de/* /de/404/index.html 404
