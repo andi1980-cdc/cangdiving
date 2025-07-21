@@ -86,22 +86,26 @@
       }
     </style>
     <script>
-      // Auto-Redirect nach Browsersprache - nur auf der Hauptseite
+      // Auto-Redirect nach Browsersprache
       document.addEventListener("DOMContentLoaded", function () {
-        // Nur auf der Hauptseite weiterleiten
-        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+        // Prüfen ob wir auf einer der Hauptseiten sind
+        var path = window.location.pathname;
+        if (path === "/" || path === "/index.html" || path === "") {
           var lang = (
             navigator.language ||
             navigator.userLanguage ||
             "en"
           ).toLowerCase();
+          
+          // Nur weiterleiten wenn kein noredirect Parameter gesetzt ist
           if (window.location.search.indexOf("noredirect") === -1) {
             if (lang.startsWith("de")) {
-              window.location.replace("/de/");
+              window.location.href = "/de/";
             } else if (lang.startsWith("th")) {
-              window.location.replace("/th/");
-            } else if (lang.startsWith("en")) {
-              window.location.replace("/en/");
+              window.location.href = "/th/";
+            } else {
+              // Standardmäßig zu Englisch
+              window.location.href = "/en/";
             }
           }
         }
