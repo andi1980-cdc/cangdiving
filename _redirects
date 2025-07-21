@@ -1,18 +1,17 @@
-# === Hauptsprachen-Roots ===
-/ /index.html 200
+# === Sprach-Root-Seiten
 /de /de/index.html 200
 /en /en/index.html 200
 /th /th/index.html 200
 
-# === Sprachspezifische Equipment-Fallbacks ===
-/de/store/category/equipment/* /de/store/category/equipment/ 301!
-/en/store/category/equipment/* /en/store/category/equipment/ 301!
-/th/store/category/equipment/* /th/store/category/equipment/ 301!
+# === Equipment Redirects (optional)
+/de/store/category/equipment/*   /de/store/category/equipment/   301!
+/en/store/category/equipment/*   /en/store/category/equipment/   301!
+/th/store/category/equipment/*   /th/store/category/equipment/   301!
 
-# === Sprachspezifische 404-Seiten – müssen zuletzt stehen
+# === Sprachspezifische 404 Regeln (funktionieren, weil die Seiten da sind)
 /de/* /de/404/index.html 404
 /en/* /en/404/index.html 404
 /th/* /th/404/index.html 404
 
-# === Globales Fallback – alles andere
+# === Letzter Fallback für alles andere (ohne Sprachpfad)
 /* /en/404/index.html 404
