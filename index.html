@@ -86,20 +86,26 @@
       }
     </style>
     <script>
-      // Auto-Redirect nach Browsersprache
+      // Auto-Redirect nach Browsersprache - NUR für die Hauptseite
       document.addEventListener("DOMContentLoaded", function () {
-        var lang = (
-          navigator.language ||
-          navigator.userLanguage ||
-          "en"
-        ).toLowerCase();
-        if (window.location.search.indexOf("noredirect") === -1) {
-          if (lang.startsWith("de")) {
-            window.location.replace("/de/");
-          } else if (lang.startsWith("th")) {
-            window.location.replace("/th/");
-          } else if (lang.startsWith("en")) {
-            window.location.replace("/en/");
+        // Nur weiterleiten, wenn wir wirklich auf der Hauptseite sind
+        var path = window.location.pathname;
+        if (path === "/" || path === "/index.html") {
+          var lang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            "en"
+          ).toLowerCase();
+          
+          // Nur weiterleiten wenn kein noredirect Parameter gesetzt ist
+          if (window.location.search.indexOf("noredirect") === -1) {
+            if (lang.startsWith("de")) {
+              window.location.replace("/de/");
+            } else if (lang.startsWith("th")) {
+              window.location.replace("/th/");
+            } else {
+              window.location.replace("/en/");
+            }
           }
         }
       });
