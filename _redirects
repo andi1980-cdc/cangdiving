@@ -1,23 +1,18 @@
-# Cloudflare Pages Redirects - Fix SEO Catastrophe
-# Root language selection (only for exact root paths)
+# === Root-Sprachseiten ===
 / /index.html 200
-
-# Language-specific redirects for exact root paths only
 /de /de/index.html 200
-/en /en/index.html 200  
+/en /en/index.html 200
 /th /th/index.html 200
 
-# 404 handling for non-existent paths under language directories
-# This prevents /de/2025/05/ from showing the language selection page
+# === Equipment Weiterleitungen ===
+/de/store/category/equipment/*   /de/store/category/equipment/   301!
+/en/store/category/equipment/*   /en/store/category/equipment/   301!
+/th/store/category/equipment/*   /th/store/category/equipment/   301!
+
+# === Sprachspezifische 404s ===
 /de/* /de/404/index.html 404
 /en/* /en/404/index.html 404
 /th/* /th/404/index.html 404
 
-# Block WordPress-style URLs that shouldn't exist
-/wp-* /404.html 404
-/wp-content/* /404.html 404
-/wp-admin/* /404.html 404
-/wp-includes/* /404.html 404
-
-# Fallback for any other non-existent paths  
-/* /404.html 404
+# === Letzter Fallback für alle anderen nicht-sprachlichen Pfade ===
+/* /en/404/index.html 404
