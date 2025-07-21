@@ -1,3 +1,9 @@
+# Root paths
+/de /de/index.html 200
+/en /en/index.html 200
+/th /th/index.html 200
+
+# 404 handling
 /de/* /de/404/index.html 404
 /en/* /en/404/index.html 404
 /th/* /th/404/index.html 404

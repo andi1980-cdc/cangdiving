@@ -86,24 +86,20 @@
       }
     </style>
     <script>
-      // Auto-Redirect nach Browsersprache - NUR für index.html
+      // Auto-Redirect nach Browsersprache
       document.addEventListener("DOMContentLoaded", function () {
-        // Nur auf der index.html Spracherkennung durchführen
-        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-          var lang = (
-            navigator.language ||
-            navigator.userLanguage ||
-            "en"
-          ).toLowerCase();
-          
-          if (window.location.search.indexOf("noredirect") === -1) {
-            if (lang.startsWith("de")) {
-              window.location.replace("/de/");
-            } else if (lang.startsWith("th")) {
-              window.location.replace("/th/");
-            } else {
-              window.location.replace("/en/");
-            }
+        var lang = (
+          navigator.language ||
+          navigator.userLanguage ||
+          "en"
+        ).toLowerCase();
+        if (window.location.search.indexOf("noredirect") === -1) {
+          if (lang.startsWith("de")) {
+            window.location.replace("/de/");
+          } else if (lang.startsWith("th")) {
+            window.location.replace("/th/");
+          } else if (lang.startsWith("en")) {
+            window.location.replace("/en/");
           }
         }
       });
