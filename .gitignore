@@ -69,3 +69,9 @@ Thumbs.db backup_*/
 # Editor backup files
 .*!*!*
 .!*!*
+
+# Backup folders
+backup_*/
+*_backup/
+*_backup_*/
+[0-9]*_backup/
