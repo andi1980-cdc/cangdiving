@@ -6,14 +6,33 @@
       // Get the path from the URL
       const path = window.location.pathname;
       
-      // Check if path starts with /de/ or /th/
+      // Function to get preferred language based on browser settings
+      function getPreferredLanguage() {
+        const language = navigator.language || navigator.userLanguage;
+        const lang = language.toLowerCase().substring(0, 2);
+        
+        // Map browser language codes to our supported languages
+        switch (lang) {
+          case 'de':
+            return 'de';
+          case 'th':
+            return 'th';
+          default:
+            return 'en';
+        }
+      }
+
+      // First check URL path
       if (path.startsWith('/de/')) {
         window.location.href = '/de/404/index.html';
       } else if (path.startsWith('/th/')) {
         window.location.href = '/th/404/index.html';
-      } else {
-        // Default to English
+      } else if (path.startsWith('/en/')) {
         window.location.href = '/en/404/index.html';
+      } else {
+        // If no language in path, use browser language
+        const preferredLang = getPreferredLanguage();
+        window.location.href = `/${preferredLang}/404/index.html`;
       }
     </script>
   </head>
