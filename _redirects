@@ -1,10 +1,21 @@
-# Root paths
-/de /de/index.html 200
-/en /en/index.html 200
-/th /th/index.html 200
+# Statische Dateien direkt durchlassen
+/img/*      /img/:splat      200
+/js/*       /js/:splat       200
+/css/*      /css/:splat      200
+/fonts/*    /fonts/:splat    200
 
-# 404 handling
-/de/* /de/404/index.html 404
-/en/* /en/404/index.html 404
-/th/* /th/404/index.html 404
-/* /en/404/index.html 404
+# Sprach-Root-Seiten
+/de        /de/index.html    200
+/en        /en/index.html    200
+/th        /th/index.html    200
+
+# Hauptseite
+/          /index.html       200
+
+# Sprachspezifische 404-Seiten für nicht existierende URLs
+/de/*      /de/404/index.html    404
+/en/*      /en/404/index.html    404
+/th/*      /th/404/index.html    404
+
+# Fallback für alles andere
+/*         /en/404/index.html    404
