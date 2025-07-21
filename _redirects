@@ -3,15 +3,15 @@
 /en /en/index.html 200
 /th /th/index.html 200
 
-# === Sprachspezifische 404 Regeln (höchste Priorität nach Root)
-/de/* /de/404/index.html 404
-/en/* /en/404/index.html 404
-/th/* /th/404/index.html 404
-
-# === Equipment Redirects (nach 404s)
+# === Equipment Redirects (optional)
 /de/store/category/equipment/*   /de/store/category/equipment/   301!
 /en/store/category/equipment/*   /en/store/category/equipment/   301!
 /th/store/category/equipment/*   /th/store/category/equipment/   301!
 
-# === Letzter Fallback für alles andere
+# === Sprachspezifische 404 Regeln (funktionieren, weil die Seiten da sind)
+/de/* /de/404/index.html 404
+/en/* /en/404/index.html 404
+/th/* /th/404/index.html 404
+
+# === Letzter Fallback für alles andere (ohne Sprachpfad)
 /* /en/404/index.html 404
