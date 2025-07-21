@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="refresh" content="0; URL='/en/404/index.html'" />
+    <meta charset="UTF-8">
+    <script>
+      // Get the path from the URL
+      const path = window.location.pathname;
+      
+      // Check if path starts with /de/ or /th/
+      if (path.startsWith('/de/')) {
+        window.location.href = '/de/404/index.html';
+      } else if (path.startsWith('/th/')) {
+        window.location.href = '/th/404/index.html';
+      } else {
+        // Default to English
+        window.location.href = '/en/404/index.html';
+      }
+    </script>
   </head>
   <body>
     <p>Redirecting to 404 page...</p>
