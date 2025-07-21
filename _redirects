@@ -1,20 +1,4 @@
-# Static files - serve directly
-/img/* /img/:splat 200
-/js/* /js/:splat 200
-/fonts/* /fonts/:splat 200
-/style.css /style.css 200
-/favicon.ico /favicon.ico 200
 
-# Language root paths
-/de /de/index.html 200
-/en /en/index.html 200
-/th /th/index.html 200
-
-# 404 handling
-/de/* /de/404/index.html 404
-/en/* /en/404/index.html 404
-/th/* /th/404/index.html 404
-/* /en/404/index.html 404
 
 # Old URLs redirects
 /en/about-search-recovery/ /en/posts/scuba-knowledge/about-search-recovery/ 301
