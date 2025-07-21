@@ -65,3 +65,7 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db backup_*/
+
+# Editor backup files
+.*!*!*
+.!*!*
