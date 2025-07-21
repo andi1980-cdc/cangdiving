@@ -86,20 +86,23 @@
       }
     </style>
     <script>
-      // Auto-Redirect nach Browsersprache
+      // Auto-Redirect nach Browsersprache - nur auf der Hauptseite
       document.addEventListener("DOMContentLoaded", function () {
-        var lang = (
-          navigator.language ||
-          navigator.userLanguage ||
-          "en"
-        ).toLowerCase();
-        if (window.location.search.indexOf("noredirect") === -1) {
-          if (lang.startsWith("de")) {
-            window.location.replace("/de/");
-          } else if (lang.startsWith("th")) {
-            window.location.replace("/th/");
-          } else if (lang.startsWith("en")) {
-            window.location.replace("/en/");
+        // Nur auf der Hauptseite weiterleiten
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+          var lang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            "en"
+          ).toLowerCase();
+          if (window.location.search.indexOf("noredirect") === -1) {
+            if (lang.startsWith("de")) {
+              window.location.replace("/de/");
+            } else if (lang.startsWith("th")) {
+              window.location.replace("/th/");
+            } else if (lang.startsWith("en")) {
+              window.location.replace("/en/");
+            }
           }
         }
       });
