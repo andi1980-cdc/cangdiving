@@ -5,6 +5,18 @@
 /style.css /style.css 200
 /favicon.ico /favicon.ico 200
 
+# Language root paths
+/de /de/index.html 200
+/en /en/index.html 200
+/th /th/index.html 200
+
+# 404 handling
+/de/* /de/404/index.html 404
+/en/* /en/404/index.html 404
+/th/* /th/404/index.html 404
+/* /en/404/index.html 404
+
+# Old URLs redirects
 /en/about-search-recovery/ /en/posts/scuba-knowledge/about-search-recovery/ 301
 /de/about-search-recovery/ /de/posts/scuba-knowledge/about-search-recovery/ 301
 /th/about-search-recovery/ /th/posts/scuba-knowledge/about-search-recovery/ 301
@@ -124,7 +136,7 @@
 /th/service-technician/ /th/posts/ 301
 /en/smb-guide/ /en/posts/scuba-knowledge/smb-guide/ 301
 /de/smb-guide/ /de/posts/scuba-knowledge/smb-guide/ 301
-/th/smb-guide/ /th/posts/scuba-knowledge/smb-guide/ 301
+/th/smb-guide/ /de/posts/scuba-knowledge/smb-guide/ 301
 /en/sustainable-diving/ /en/posts/straight-talk/sustainable-diving/ 301
 /de/sustainable-diving/ /de/posts/straight-talk/sustainable-diving/ 301
 /th/sustainable-diving/ /th/posts/straight-talk/sustainable-diving/ 301
