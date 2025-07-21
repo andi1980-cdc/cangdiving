@@ -1,30 +1,29 @@
 # Redirect www to non-www (canonical)
 https://www.changdiving.com/* https://changdiving.com/:splat 301!
 
-# Equipment category redirects (must come before language root paths)
-/de/store/category/equipment* /de/store/category/equipment/ 301!
-/en/store/category/equipment* /en/store/category/equipment/ 301!
-/th/store/category/equipment* /th/store/category/equipment/ 301!
-
-# Cloudflare Pages Redirects - Fix SEO Catastrophe
-# Root language selection (only for exact root paths)
-/ /index.html 200
-
-# Language-specific redirects for exact root paths only
+# Language root paths only (no subpaths)
 /de /de/index.html 200
-/en /en/index.html 200  
+/en /en/index.html 200
 /th /th/index.html 200
 
-# Handle non-existent paths with language-specific 404s
-/de/* /de/404/index.html 404
-/en/* /en/404/index.html 404
-/th/* /th/404/index.html 404
+# Equipment category redirects
+/de/store/category/equipment/* /de/store/category/equipment/ 301!
+/en/store/category/equipment/* /en/store/category/equipment/ 301!
+/th/store/category/equipment/* /th/store/category/equipment/ 301!
 
-# Block WordPress-style URLs that shouldn't exist
+# Block WordPress-style URLs
 /wp-* /404.html 404
 /wp-content/* /404.html 404
 /wp-admin/* /404.html 404
 /wp-includes/* /404.html 404
 
-# Fallback for any other non-existent paths  
+# Language-specific 404s for all non-existent paths
+/de/* /de/404/index.html 404
+/en/* /en/404/index.html 404
+/th/* /th/404/index.html 404
+
+# Root path only - language selection
+/ /index.html 200
+
+# Fallback 404 for everything else (including root level paths that don't exist)
 /* /404.html 404
