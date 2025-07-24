@@ -27,4 +27,5 @@ Allow: /de/
 Allow: /th/
 
 # SITEMAP DECLARATION
-Sitemap: https://changdiving.com/sitemap.xml 
+Sitemap: https://changdiving.com/sitemap.xml
+Sitemap: https://changdiving.com/sitemap-images.xml

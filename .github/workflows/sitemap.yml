@@ -31,6 +31,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add sitemap.xml
-        git diff --staged --quiet || git commit -m "Auto-update sitemap.xml"
+        git add sitemap.xml sitemap-images.xml
+        git diff --staged --quiet || git commit -m "Auto-update sitemaps (XML + Images)"
         git push 
